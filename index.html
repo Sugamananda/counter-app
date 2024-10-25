@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Counter App</title>
+<style>
+  body {
+    font-family:Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+  }
+  .counter {
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  button {
+    font-size: 1rem;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+  }
+</style>
+</head>
+<body>
+  <h1>Counter App</h1>
+  <div class="counter">0</div>
+  <button id="incrementBtn">Increment</button>
+  <button id="decrementBtn">Decrement</button>
+  <button id="resetBtn">Reset</button>
+  <script>
+    // Selecting elements
+    const counterElement = document.querySelector('.counter');
+    const incrementBtn = document.getElementById('incrementBtn');
+    const decrementBtn = document.getElementById('decrementBtn');
+    const resetBtn = document.getElementById('resetBtn');
+    // Initial counter value
+    let counter = 0;
+    // Function to update counter value and display
+    function updateCounter(newValue) {
+      counter = newValue;
+      counterElement.textContent = counter;
+    }
+    // Increment button click event
+    incrementBtn.addEventListener('click', function() {
+      updateCounter(counter + 1);
+    });
+    // Decrement button click event
+    decrementBtn.addEventListener('click', function() {
+      updateCounter(counter - 1);
+    });
+    // Reset button click event
+    resetBtn.addEventListener('click', function() {
+      updateCounter(0);
+    });
+    //Syntax: element.addEventListener(event, function, useCapture);
+  </script>
+  <script src="javascript.js"></script>
+</body>
+</html>
